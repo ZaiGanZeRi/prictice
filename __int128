@@ -30,4 +30,5 @@ int128 operator * (int128 a,int b)
     k.low=a.low*b;
     k.hig+=k.low/p+b*a.hig;
     k.low%=p;
-    return k;}
+    return k;
+    }
