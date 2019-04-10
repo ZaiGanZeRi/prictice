@@ -3,9 +3,6 @@ struct int128
     long long hig;
     long long low;
 };
-int n,m;
-long long p=1e18;
-int128 ans[MAXN],f[MAXN][MAXN][MAXN][MAXN],a[MAXN][MAXN];
 int128 max(int128 a,int128 b)
 {
     if(a.hig>b.hig) return a;
