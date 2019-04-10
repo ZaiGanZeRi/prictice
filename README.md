@@ -1,1 +1,1 @@
-# noob-s-prictice
+# prictice
