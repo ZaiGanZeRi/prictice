@@ -1,0 +1,33 @@
+struct int128
+{
+    long long hig;
+    long long low;
+};
+int n,m;
+long long p=1e18;
+int128 ans[MAXN],f[MAXN][MAXN][MAXN][MAXN],a[MAXN][MAXN];
+int128 max(int128 a,int128 b)
+{
+    if(a.hig>b.hig) return a;
+    if(a.hig<b.hig) return b;
+    if(a.low>b.low) return a;
+    if(a.low<b.low) return b;
+    return a;
+}
+int128 operator + (int128 a,int128 b)
+{
+    int128 k;
+    k.low=0,k.hig=0;
+    k.low=a.low+b.low;
+    k.hig=k.low/p+a.hig+b.hig;
+    k.low%=p;
+    return k;
+}
+int128 operator * (int128 a,int b)
+{
+    int128 k;
+    k.low=0,k.hig=0;
+    k.low=a.low*b;
+    k.hig+=k.low/p+b*a.hig;
+    k.low%=p;
+    return k;}
